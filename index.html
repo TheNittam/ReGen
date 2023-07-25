@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ReGen</title>
+      <link type="text/css" rel="stylesheet" href="assests/css/style.css">
+      <style>
+         .toggle-checkbox:checked {
+            @apply: right-0 border-green-400;
+            right: 0;
+            border-color: #68D391;
+        }
+        
+        .toggle-checkbox:checked+.toggle-label {
+            @apply: bg-green-400;
+            background-color: #68D391;
+        }
+        </style>
+   </head>
+   <body class="bg-gradient-to-r from-rose-500 to-blue-500">
+    <nav class="flex items-center justify-center flex-wrap bg-white shadow-lg p-6">
+        <span class="text-gray-700 font-black text-2xl">Regex Generator - ReGen</span>
+    </nav>
+      <div class="mt-20">
+      <div class="flex justify-center">
+      <div class="w-1/2">
+         <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
+            <div class="flex flex-wrap -mx-3 mb-6">
+               <div class="w-full px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Log Sample
+                  </label>
+                  <textarea id="log2regex"
+                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                     rows="10" placeholder="Enter your log sample here">1331901000.260000	C6SwUo2lWDfrpgfgVl	192.168.202.79	50504	192.168.229.251	80	tcp	http	0.010000	182	214	SF	-	0	ShADfFa	4	398	3	382	(empty)
+                     1331901001.440000	C26Bhi2scZzizn7ph9	192.168.202.79	50681	192.168.229.251	80	tcp	http	0.010000	172	281	SF	-	0	ShADdfFa	5	440	4	501	(empty)
+                     1331901050.450000	CnbU9V2P0WWwMlO1l	192.168.202.76	51719	213.199.179.147	80	tcp	-	3.010000	0	0	S0	-	0	S	2	104	0	0	(empty)
+                     1331901079.900000	Cyu9CADFj5Kg5rhf4	192.168.202.79	48479	192.168.229.153	49160	tcp	-	0.010000	198	118	SF	-	0	ShADdfFa	5	466	4	334	(empty)
+                     1331901027.780000	CcUhD5kLSPzplLI5e	192.168.202.100	45658	192.168.27.152	17533	udp	-	-	-	-	S0	-	0	D	1	28	0	0	(empty)
+                     1331901093.580000	CYQGWQGiLXEjX8bu5	192.168.202.79	49113	192.168.229.153	49160	tcp	-	0.050000	200	118	SF	-	0	ShADdfFa	5	468	4	334	(empty)
+                     1331901113.090000	CeGpJOAW2W8siwvj5	192.168.202.79	49788	192.168.229.153	49160	tcp	-	0.050000	198	118	SF	-	0	ShADdfFa	6	518	4	334	(empty)
+                     1331901118.890000	Cy8LsKuaNkhQtFdHb	192.168.202.79	49934	192.168.229.153	49160	tcp	-	0.050000	200	118	SF	-	0	ShADdfFa	5	468	4	334	(empty)
+                     1331901135.710000	C6tF033AwIOCZEu8Jf	192.168.202.79	50356	192.168.229.153	49160	tcp	-	0.060000	198	118	SF	-	0	ShADdfFa	6	518	4	334	(empty)
+                     1331901141.690000	C88vzO2xUf5gnnENT4	192.168.202.79	50507	192.168.229.153	49160	tcp	-	0.110000	204	118	SF	-	0	ShADdfFa	6	524	4	334	(empty)
+                     1331901267.090000	CEWf1y3KplXBdvL8Uh	fe80::3e07:54ff:fe1c:a665	5353	ff02::fb	5353	udp	dns	0.100000	227	0	S0	-	0	D	2	323	0	0	(empty)
+                     1331901300.260000	CPUp4l4GsNYBtKoqMl	192.168.202.89	2123	195.228.75.190	9001	tcp	-	-	-	-	S0	-	0	S	1	48	0	0	(empty)
+                     1331901352.110000	CUxUU91JqDPyyj0DTl	192.168.202.76	51968	183.182.82.14	443	tcp	-	3.010000	0	0	S0	-	0	S	2	104	0	0	(empty)
+                     1331901770.440000	CYsWoO1q6rLUQzbOO8	192.168.202.79	63805	192.168.229.156	63303	tcp	-	0.030000	0	0	REJ	-	0	Sr	1	44	1	40	(empty)
+                     1331901770.550000	Cci1ii3T1Uv8yK6ROh	192.168.202.79	63805	192.168.229.1	34736	tcp	-	-	-	-	REJ	-	0	Sr	1	44	1	40	(empty)
+                     1331901770.910000	C0VBUVk63cH2lStW2	192.168.202.79	63805	192.168.229.1	4115	tcp	-	-	-	-	REJ	-	0	Sr	1	44	1	40	(empty)
+                     1331901771.140000	CsbPQi41wEUl6T5l0d	192.168.202.79	63805	192.168.229.153	48154	tcp	-	0.030000	0	0	REJ	-	0	Sr	1	44	1	40	(empty)
+                     1331901771.440000	ClKfSd2rm2a3gE7pW8	192.168.202.79	63805	192.168.229.252	22653	tcp	-	0.020000	0	0	REJ	-	0	Sr	1	44	1	40	(empty)
+                     1331901771.490000	CP2Bnr1toip8qVqgm4	192.168.202.79	63805	192.168.229.101	886	tcp	-	0.020000	0	0	REJ	-	0	Sr	1	44	1	40	(empty)</textarea>
+                  <p class="text-gray-600 text-xs italic">Enter your log sample here</p>
+               </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+               <div class="w-full px-3">
+                  <div
+                     class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                     <input type="checkbox" id="disTextarea"
+                        class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked="checked" />
+                     <label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="bg-white rounded-lg shadow-lg p-4 mb-6" id="regexContainer">
+            <div class="flex flex-wrap -mx-3 mb-6">
+               <div class="w-full px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                     for="grid-password">
+                  Regex
+                  </label>
+                  <textarea id="regexOutput"
+                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                     rows="10" placeholder="Regex" readonly="readonly" disabled="disabled"></textarea>
+                  <p class="text-gray-600 text-xs italic">Generated Regex Result</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="assests/js/app.js"></script>
+   </body>
+</html>
