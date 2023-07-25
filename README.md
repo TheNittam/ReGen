@@ -1,6 +1,7 @@
 # Regex Generator Tool
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgreen.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![platform](https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-green.svg)](https://github.com/TheNittam/RPOscanner/)
 
 ## Overview
 
