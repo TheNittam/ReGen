@@ -7,7 +7,7 @@
 
 The ReGen is a utility tool that simplifies the process of crafting Regex expressions. With this tool, users can effortlessly generate Regex patterns by selecting desired values from logs or text. While it's still in its initial stages and may not be perfect, it aims to address the tediousness of Regex writing for various use cases, including digital forensics, attack, defense, and validation scenarios. By reducing the time spent on Regex creation, I hope to boost the overall work efficiency of professionals working with Regex.
 
-![DEMO GIF](.github/demo/demo.gif)
+![DEMO GIF](demo/demo.gif)
 
 ## Features
 
